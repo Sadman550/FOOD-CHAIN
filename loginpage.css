@@ -1,6 +1,6 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f0fff0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Purple to blue gradient */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,15 +10,16 @@ body {
 .login-container {
   background: #ffffff;
   padding: 30px 40px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  width: 300px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  width: 320px;
   text-align: center;
 }
 
 .login-container h2 {
   margin-bottom: 20px;
-  color: #2e8b57;
+  color: #ff4081;
+  font-size: 24px;
 }
 
 form {
@@ -30,34 +31,44 @@ label {
   text-align: left;
   margin: 8px 0 5px;
   font-weight: bold;
-  color: #333;
+  color: #555;
 }
 
 input {
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #7e57c2;
+  box-shadow: 0 0 5px rgba(126, 87, 194, 0.5);
+  outline: none;
 }
 
 button {
-  background-color: #2e8b57;
+  background: linear-gradient(to right, #7e57c2, #42a5f5);
   color: white;
-  padding: 10px;
+  padding: 12px;
+  font-weight: bold;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 button:hover {
-  background-color: #246b45;
+  background: linear-gradient(to right, #5e35b1, #1e88e5);
 }
 
-
 select {
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 14px;
+  background-color: #f1f8e9;
 }
