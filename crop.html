@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Entry</title>
+  <link rel="stylesheet" href="farmerCss.css">
+</head>
+<body>
+
+<header>🌱 Add Crop Entry</header>
+
+<div class="nav">
+  <a href="farmerInfo.html">Farmer Info</a>
+  <a href="crop.html">Add Crop</a>
+  <a href="Farmer_dashboard.html">Dashboard</a>
+</div>
+
+<div class="container">
+  <h2>🌾 Crop Information</h2>
+  <form>
+    <label for="crop_name">Crop Name</label>
+    <input type="text" id="crop_name" name="crop_name" required>
+
+    <label for="type">Crop Type</label>
+    <select id="type" name="type">
+      <option value="Fruit">Fruit</option>
+      <option value="Vegetable">Vegetable</option>
+      <option value="Grain">Grain</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="quantity">Quantity (kg)</label>
+    <input type="number" id="quantity" name="quantity" required>
+
+    <button type="submit">Submit Crop</button>
+  </form>
+</div>
+
+</body>
+</html>
