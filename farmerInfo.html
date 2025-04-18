@@ -2,35 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Farmer Info</title>
+  <title>Add Farmer Info</title>
   <link rel="stylesheet" href="farmerCss.css">
 </head>
 <body>
   <div class="sidebar">
     <h1>🌾 Farmer Panel</h1>
     <a href="farmerInfo.html">Farmer Info</a>
-    <a href="farmerInfoView.html">Farmer Details</a>
+    <a href="farmerInfoView.php">Farmer Details</a>
     <a href="crop.html">Add Crop</a>
-    <a href="Farmer_dashboard.html">Dashboard</a>
+    <a href="Farmer_dashboard.php">Dashboard</a>
   </div>
-
   <div class="main">
-    <header>👤 Farmer Information</header>
+    <header>📝 Add Farmer Info</header>
     <div class="container">
-      <form>
-        <label for="name">Farmer Name</label>
+      <form action="farmerInfo.php" method="POST">
+        <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
 
         <label for="contact">Contact Number</label>
-        <input type="tel" id="contact" name="contact" pattern="[0-9]{11}"  required>
+        <input type="text" id="contact" name="contact">
 
         <label for="street">Street</label>
-        <input type="text" id="street" name="street" required>
+        <input type="text" id="street" name="street">
 
         <label for="city">City</label>
-        <input type="text" id="city" name="city" required>
+        <input type="text" id="city" name="city">
 
-        <button type="submit">Save Info</button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   </div>
