@@ -1,186 +1,264 @@
-/* style.css */
-
-/* Reset and Base Styles */
+/* ---------------------------------------------------
+   Reset & Base Styles
+--------------------------------------------------- */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f1f6f9;
-    color: #333;
-    display: flex;
-  }
-  
-  /* Sidebar Navigation */
-  .sidebar {
-    width: 220px;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #116466, #2c786c);
-    padding: 2rem 1rem;
-    color: #fff;
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  .sidebar h1 {
-    font-size: 1.6rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    color: #ffffff;
-  }
-  
-  .sidebar a {
-    color: #d6f5f2;
-    text-decoration: none;
-    padding: 12px 18px;
-    margin: 6px 0;
-    border-radius: 8px;
-    font-weight: 600;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f1f6f9;
+  color: #333;
+  display: flex;
+}
+
+/* ---------------------------------------------------
+   Sidebar Navigation
+--------------------------------------------------- */
+.sidebar {
+  width: 220px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #116466, #2c786c);
+  padding: 2rem 1rem;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h1 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar a {
+  color: #d6f5f2;
+  text-decoration: none;
+  padding: 12px 18px;
+  margin: 6px 0;
+  border-radius: 8px;
+  font-weight: 600;
+  display: block;
+  transition: background 0.3s, padding-left 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #0e4749;
+  padding-left: 24px;
+}
+
+/* ---------------------------------------------------
+   Main Content
+--------------------------------------------------- */
+.main {
+  margin-left: 220px;
+  padding: 2rem;
+  width: calc(100% - 220px);
+}
+
+/* ---------------------------------------------------
+   Header
+--------------------------------------------------- */
+header {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #116466;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #2c786c;
+  padding-bottom: 10px;
+}
+
+/* ---------------------------------------------------
+   Container
+--------------------------------------------------- */
+.container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+  max-width: 800px;
+  margin: auto;
+}
+
+/* ---------------------------------------------------
+   Form Styles
+--------------------------------------------------- */
+form label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+  border-color: #2c786c;
+  outline: none;
+}
+
+button {
+  margin-top: 25px;
+  background-color: #2c786c;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #195e56;
+}
+
+/* ---------------------------------------------------
+   Table Styles
+--------------------------------------------------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+}
+
+th, td {
+  padding: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+th {
+  background-color: #2c786c;
+  color: white;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+  background-color: #eef9f5;
+}
+
+/* ---------------------------------------------------
+   Action Buttons
+--------------------------------------------------- */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-edit {
+  background-color: #ffa500;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #e69500;
+}
+
+.btn-delete {
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #c0392b;
+}
+
+/* ---------------------------------------------------
+   Farmer Info Table Enhancements
+--------------------------------------------------- */
+.view-table {
+  margin-top: 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.view-table th, .view-table td {
+  padding: 16px 20px;
+  font-size: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-table th {
+  background-color: #2c786c;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.view-table tr:hover {
+  background-color: #eef9f5;
+}
+
+/* ---------------------------------------------------
+   Responsive Table (for small screens)
+--------------------------------------------------- */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
     display: block;
-    transition: background 0.3s, padding-left 0.3s;
   }
-  
-  .sidebar a:hover {
-    background-color: #0e4749;
-    padding-left: 24px;
+
+  .view-table thead {
+    display: none;
   }
-  
-  /* Main Content */
-  .main {
-    margin-left: 220px;
-    padding: 2rem;
-    width: calc(100% - 220px);
-  }
-  
-  /* Header */
-  header {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #116466;
-    margin-bottom: 2rem;
-    border-bottom: 2px solid #2c786c;
-    padding-bottom: 10px;
-  }
-  
-  /* Container */
-  .container {
+
+  .view-table tr {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     background: #fff;
-    padding: 2rem;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
-    max-width: 800px;
-    margin: auto;
   }
-  
-  /* Form Styles */
-  form label {
-    display: block;
-    margin-top: 18px;
-    font-weight: 600;
-    color: #2c3e50;
-  }
-  
-  input,
-  select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
-    transition: border-color 0.3s;
-  }
-  
-  input:focus,
-  select:focus {
-    border-color: #2c786c;
-    outline: none;
-  }
-  
-  button {
-    margin-top: 25px;
-    background-color: #2c786c;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #195e56;
-  }
-  
-  /* Table Styles */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 25px;
-  }
-  
-  th, td {
-    padding: 15px;
-    border-bottom: 1px solid #e0e0e0;
+
+  .view-table td {
+    position: relative;
+    padding-left: 50%;
     text-align: left;
   }
-  
-  th {
-    background-color: #2c786c;
-    color: white;
-    font-weight: 600;
+
+  .view-table td::before {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-weight: bold;
+    white-space: nowrap;
+    color: #2c786c;
+    content: attr(data-label);
   }
-  
-  tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-  }
-  
-  tbody tr:hover {
-    background-color: #eef9f5;
-  }
-  
-  /* Action Buttons */
-  .action-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .btn-edit {
-    background-color: #ffa500;
-    color: #fff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-edit:hover {
-    background-color: #e69500;
-  }
-  
-  .btn-delete {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-delete:hover {
-    background-color: #c0392b;
-  }
-  
+}
