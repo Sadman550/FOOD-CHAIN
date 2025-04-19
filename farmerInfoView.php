@@ -1,3 +1,16 @@
+<?php
+include('db_connect.php');
+
+// Delete logic (no confirmation)
+if (isset($_GET['delete_id'])) {
+    $id = $_GET['delete_id'];
+    $deleteQuery = "DELETE FROM farmers WHERE id = $id";
+    mysqli_query($conn, $deleteQuery);
+    header("Location: farmerInfoView.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,6 +26,7 @@
     <a href="crop.html">Add Crop</a>
     <a href="Farmer_dashboard.php">Dashboard</a>
   </div>
+
   <div class="main">
     <header>👤 Farmer Details</header>
     <div class="container">
@@ -28,7 +42,6 @@
         </thead>
         <tbody>
           <?php
-            include('db_connect.php');
             $query = "SELECT * FROM farmers";
             $result = mysqli_query($conn, $query);
 
@@ -40,8 +53,8 @@
                 echo "<td>" . htmlspecialchars($row['street']) . "</td>";
                 echo "<td>" . htmlspecialchars($row['city']) . "</td>";
                 echo "<td>
-                        <button class='btn-edit'>Edit</button>
-                        <button class='btn-delete'>Delete</button>
+                        <a class='btn-edit' href='editFarmer.php?id={$row['id']}'>Edit</a>
+                        <a class='btn-delete' href='farmerInfoView.php?delete_id={$row['id']}'>Delete</a>
                       </td>";
                 echo "</tr>";
               }
